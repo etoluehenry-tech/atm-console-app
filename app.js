@@ -1,4 +1,4 @@
-// var , let, const
+
 import readline from "node:readline";
 
 // // Create interface for input/output
@@ -29,7 +29,7 @@ const accounts = [
   },
 ];
 
-// create bank menu options
+// bank menu options
 const options = ["Withdraw", "Transfer", "Check balance"];
 
 
@@ -45,7 +45,7 @@ const showMenu = (account) => {
     console.log("You have selected option ", option);
     switch (option) {
         //assignment
-       case "1": // Allow user to withdraw money
+       case "1": //withdraw money
         prompt.question("Enter the amount you want to withdraw: ", (amountInput) => {
           let  amount = Number(amountInput);
           let balance = account.balance;
@@ -67,7 +67,7 @@ const showMenu = (account) => {
         continueOrStopMenu(account);
         break;
 
-      case "2": // Allow user to transfer money
+      case "2": //transfering funds
           prompt.question("Enter amount to transfer: ", (amount) => {
           amount = Number(amount);
 
@@ -85,12 +85,12 @@ const showMenu = (account) => {
         continueOrStopMenu(account);
      } )
         break;
-      case "3": // Allow user to check balance
+      case "3": //to check balance
         const balance = account.balance;
         console.log(`Your account balance is: ${balance}`);
         continueOrStopMenu(account);
         break;
-      case "x": // Allow user to exit
+      case "x": //to exit
         console.log("Thank you for banking with us.");
         prompt.close();
         break;
@@ -136,7 +136,7 @@ const App = () => {
 
 
 
-// Handle application exit
+// exit
 prompt.on("close", () => {
   console.log("\n Goodbye!");
   process.exit(0);
